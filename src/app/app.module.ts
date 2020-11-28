@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { SongComponent } from './song/song.component';
 import { ArtistComponent } from './artist/artist.component';
 import { ListeComponent } from './liste/liste.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SongComponent,
     ArtistComponent,
-    ListeComponent
+    ListeComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
