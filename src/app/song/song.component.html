@@ -1,0 +1,32 @@
+<div class="p-3">
+
+  <div class="row align-items-center">
+    <img src="{{ song.header_image_thumbnail_url }}" alt="" class=" img-thumbnail rounded-circle">
+    <div  class="mx-3">
+      <h1>{{ song.full_title }} </h1>
+      <span>{{song.release_date | date}}</span>
+      <div *ngIf="song.album">
+        <h3>{{song.album.name}}</h3>
+        <a href="{{song.album.url}}" target="_blank"> Lien de l'album</a>
+      </div>
+      <div class="mt-2">
+        <span *ngIf="song.stats.pageviews"> Nombre de vues sur la page : <span class="badge badge-pill badge-dark">{{song.stats.pageviews}}</span></span>
+        <span *ngIf="song.stats.contributors"> Contibuteurs : <span class="badge badge-pill badge-dark">{{song.stats.contributors}}</span></span>
+        <span *ngIf="song.stats.accepted_annotations"> Nombre d'annotations: <span class="badge badge-pill badge-dark">{{song.stats.accepted_annotations}}</span></span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="mt-3 col-6">
+      <h3>Ecoutez la musique</h3>
+      <div *ngFor=" let media of song.media">
+          <a href="{{media.url}}" target="_blank"><img src="../assets/img/{{media.provider}}.png" alt="{{media.provider}} logo"> </a>
+      </div>
+    </div>
+
+    <div class="mt-3 col-6">
+      <h3>Lire les paroles</h3>
+        <a href="{{song.url}}" target="_blank"><img src="../assets/img/genius.png" alt="genius logo"> </a>
+    </div>
+  </div>
+</div>

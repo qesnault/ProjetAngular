@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { GetApiService } from  './get-api.service';
 
 @Component({
   selector: 'app-root',
@@ -8,14 +7,11 @@ import { GetApiService } from  './get-api.service';
 })
 export class AppComponent {
   title = 'projet-angular';
-  constructor(private api:GetApiService)
+  constructor()
   {
 
   }
   ngOnInit()
   {
-    this.api.apiCall().subscribe((data =>{
-      console.log("get api data", data);
-    }));
   }
 }
