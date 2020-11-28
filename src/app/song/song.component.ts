@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { GetApiService } from  '../get-api.service';
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-song',
@@ -10,11 +11,13 @@ import { GetApiService } from  '../get-api.service';
 export class SongComponent implements OnInit {
 
   song;
+  id;
 
-  constructor(private api:GetApiService) { }
+  constructor(private api:GetApiService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.api.getSong('3756041').subscribe((data =>{
+    this.id = this.route.snapshot.params['songId'];
+    this.api.getSong(this.id).subscribe((data =>{
       this.song = data.response.song;
       console.log("get api data", this.song);
     }));
