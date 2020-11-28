@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   artists =[];
 
   songId = ['2931547','3399990','2685480','2376891','3315890'];
-  artistsId = ['45855','130','19217','13585'];
+  artistsId = ['45855','130','19217','13585','315143'];
 
   constructor(private api:GetApiService) { }
 
@@ -25,20 +25,20 @@ export class HomeComponent implements OnInit {
     for (const artist of this.artistsId) {
       this.getArtist(artist);
     }
+    console.log(this.artists)
 
   }
 
-  getSong(id){
+  getSong(id):void{
     this.api.getSong(id).subscribe((data =>{
       this.songs.push(data.response.song);
     }));
 
   }
 
-  getArtist(id){
+  getArtist(id):void{
     this.api.getArtist(id).subscribe((data =>{
       this.artists.push(data.response.artist);
-      console.log(data.response.artist)
     }));
   }
 }
