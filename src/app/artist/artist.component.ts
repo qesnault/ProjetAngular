@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GetApiService } from '../get-api.service';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-artist',
@@ -9,14 +10,16 @@ import { GetApiService } from '../get-api.service';
 export class ArtistComponent implements OnInit {
 
   artist;
+  id;
 
-  constructor(private api: GetApiService) { }
+  constructor(private api: GetApiService,  private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    /*this.api.apiCall("artists/16775").subscribe((data => {
-      this.artist = data.response.artist;
+    this.id = this.route.snapshot.params['artistId'];
+    this.api.getArtist(this.id).subscribe((data => {
+      this.artist = data;
       console.log("get api data", this.artist);
-    }));*/
+    }));
   }
 
 }

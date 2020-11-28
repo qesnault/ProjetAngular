@@ -6,7 +6,7 @@ import { ListeComponent } from './liste/liste.component'
 
 const routes: Routes = [
   { path: 'song/:songId', component: SongComponent },
-  { path: 'artist', component:ArtistComponent },
+  { path: 'artist/:artistId', component:ArtistComponent },
   { path: 'results', component:ListeComponent }
 ];
 

@@ -31,4 +31,8 @@ export class GetApiService {
   getSearch(value:string){
     return this.http.get('https://genius.p.rapidapi.com/search?q='+value, this.header);
   }
+
+  getArtist(id:string){
+    return this.http.get('https://genius.p.rapidapi.com/artists/'+id, this.header);
+  }
 }
