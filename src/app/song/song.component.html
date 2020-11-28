@@ -1,10 +1,10 @@
-<div class="p-3">
+<div class="m-5">
 
   <div class="row align-items-center">
-    <img src="{{ song.header_image_thumbnail_url }}" alt="" class=" img-thumbnail rounded-circle">
+    <img src="{{ song.song_art_image_thumbnail_url }}" alt="" class=" img-thumbnail rounded-circle">
     <div  class="mx-3">
-      <h1>{{ song.full_title }} </h1>
-      <span>{{song.release_date | date}}</span>
+      <h1>{{ song.title }}  de <a href="http://localhost:4200/artist/{{song.primary_artist.id}}"> {{song.primary_artist.name}}</a></h1>
+      <span>{{song.release_date}}</span>
       <div *ngIf="song.album">
         <h3>{{song.album.name}}</h3>
         <a href="{{song.album.url}}" target="_blank"> Lien de l'album</a>
@@ -18,9 +18,9 @@
   </div>
   <div class="row">
     <div class="mt-3 col-6">
-      <h3>Ecoutez la musique</h3>
-      <div *ngFor=" let media of song.media">
-          <a href="{{media.url}}" target="_blank"><img src="../assets/img/{{media.provider}}.png" alt="{{media.provider}} logo"> </a>
+      <h3>Ecouter la musique</h3>
+      <div class="row">
+          <a *ngFor=" let media of song.media" href="{{media.url}}" target="_blank"><img src="../assets/img/{{media.provider}}.png" alt="{{media.provider}} logo"> </a>
       </div>
     </div>
 
