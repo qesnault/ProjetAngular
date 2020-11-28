@@ -14,8 +14,8 @@ export class AppComponent {
   }
   ngOnInit()
   {
-    this.api.apiCall().subscribe((data =>{
+    /*this.api.apiCall("search?q=Kendrick%20Lamar").subscribe((data =>{
       console.log("get api data", data);
-    }));
+    }));*/
   }
 }

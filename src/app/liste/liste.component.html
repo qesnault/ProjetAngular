@@ -1,0 +1,7 @@
+<h2>
+    Sons :
+</h2>
+<div *ngFor="let hit of searchResult">
+    <h3>{{hit.result.full_title}}</h3>
+    <img style="width: 200px; height: 200px;" src="{{hit.result.header_image_url}}" alt="">
+</div>
