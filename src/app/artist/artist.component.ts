@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GetApiService } from '../get-api.service';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-artist',
