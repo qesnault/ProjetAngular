@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GetApiService } from '../get-api.service';
 
 @Component({
   selector: 'app-artist',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArtistComponent implements OnInit {
 
-  constructor() { }
+  artist;
+
+  constructor(private api: GetApiService) { }
 
   ngOnInit(): void {
+    this.api.apiCall("artists/16775").subscribe((data => {
+      this.artist = data.response.artist;
+      console.log("get api data", this.artist);
+    }));
   }
 
 }
