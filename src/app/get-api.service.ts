@@ -9,7 +9,7 @@ export class GetApiService {
   header: Object = {
     "headers": {
       "x-rapidapi-host": "genius.p.rapidapi.com",
-      "x-rapidapi-key": "a7614406e2msh59ee1345507dfb4p186de0jsn2bf93e973b3a"
+      "x-rapidapi-key": "a7614406e2msh59ee1345507dfb4p186de0jsn2bf93e973b3a",
     }
   }
 
@@ -21,10 +21,14 @@ export class GetApiService {
 
   apiCall()
   {
-    return this.http.get('https://genius.p.rapidapi.com/artists/16775', this.header);
+    return this.http.get('https://genius.p.rapidapi.com/', this.header);
   }
 
   getSong(id:string){
     return this.http.get('https://genius.p.rapidapi.com/songs/'+id, this.header);
+  }
+
+  getSearch(value:string){
+    return this.http.get('https://genius.p.rapidapi.com/search?q='+value, this.header);
   }
 }
