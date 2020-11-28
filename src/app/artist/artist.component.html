@@ -1,3 +1,21 @@
-<h2>
-    {{artist.response.artist.name}}
-</h2>
+<div class="container">
+    <div>
+        <img style="width: 100%;" src="{{artist.response.artist.header_image_url}}" alt="Image de l'artiste">
+        <h2 class="text-center">
+            <img style="width: 200px; height: 200px;" class="img-fluid img-thumbnail rounded-circle img-pp" src="{{artist.response.artist.image_url}}" alt="Photo de profil de l'artiste"> {{artist.response.artist.name}}
+        </h2>
+    </div>
+    <div class="row">
+        <a [routerLink]="['/song', song.id]" *ngFor="let song of songs.response.songs" class="col-sm-6 col-md-3">
+            <img class="songImage" src="{{song.header_image_thumbnail_url}}" alt="">
+            <h5>
+                {{song.title}}
+            </h5>
+        </a>
+    </div>
+    <a class="logo" href="{{artist.response.artist.url}}"><img src="../assets/img/genius.png" alt="genius logo"> </a>
+    <a class="logo" href="https://www.facebook.com/{{artist.response.artist.facebook_name}}"><img src="../assets/img/fb.png" alt="facebook logo"> </a>
+    <a class="logo" href="https://www.instagram.com/{{artist.response.artist.instagram_name}}"><img src="../assets/img/insta.png" alt="insta logo"> </a>
+    <a class="logo" href="https://twitter.com/{{artist.response.artist.twitter_name}}"><img src="../assets/img/twitter.png" alt="insta logo"> </a>
+
+</div>

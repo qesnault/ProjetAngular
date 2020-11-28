@@ -18,7 +18,7 @@ export class SongComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.params['songId'];
     this.api.getSong(this.id).subscribe((data =>{
-      this.song = data.response.song;
+      this.song = data;
       console.log("get api data", this.song);
     }));
   }

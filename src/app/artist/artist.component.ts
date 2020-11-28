@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ArtistComponent implements OnInit {
 
   artist;
+  songs;
   id;
 
   constructor(private api: GetApiService,  private route: ActivatedRoute) { }
@@ -18,8 +19,12 @@ export class ArtistComponent implements OnInit {
     this.id = this.route.snapshot.params['artistId'];
     this.api.getArtist(this.id).subscribe((data => {
       this.artist = data;
+    }));
+    this.api.getArtistSongs(this.id).subscribe((data => {
+      this.songs = data;
       console.log("get api data", this.artist);
     }));
   }
 
+  //isLink(val): boolean { return typeof val === 'object'; }
 }
