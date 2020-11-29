@@ -3,13 +3,13 @@
     <h3>Meilleurs Sons :</h3>
 
     <div class= "row" >
-      <a href="http://localhost:4200/song/{{song.id}}" class="col-2" *ngFor="let song of songs" ><img class=" rounded-circle" style="width: 200px; height: 200px;" src="{{song.song_art_image_thumbnail_url}}" alt="{{song.name}}"></a>
+      <a href="http://localhost:4200/song/{{song.id}}" class="col-2" *ngFor="let song of songs" ><img class=" rounded-circle image" style="width: 200px; height: 200px;" src="{{song.song_art_image_thumbnail_url}}" alt="{{song.name}}"></a>
     </div>
   </div>
   <div class="my-3">
     <h3>Meilleurs Artistes: </h3>
     <div class= "row" >
-      <a href="http://localhost:4200/artist/{{artist.id}}" class="col-2" *ngFor="let artist of artists" ><img class=" rounded-circle" style="width: 200px; height: 200px;" src="{{artist.image_url}}" alt="{{artist.name}}"></a>
+      <a href="http://localhost:4200/artist/{{artist.id}}" class="col-2" *ngFor="let artist of artists" ><img class=" rounded-circle image" style="width: 200px; height: 200px;" src="{{artist.image_url}}" alt="{{artist.name}}"></a>
     </div>
   </div>
 </div>
