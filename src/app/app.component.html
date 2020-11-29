@@ -1,9 +1,10 @@
-<p>
-    fkfkdpf</p>
-<a [routerLink]="['/song', 3756041]">Damso Feu de bois</a>
-<br>
-<a [routerLink]="['/artist', 45855]">Damso</a>
-
+<header class="row align-items-center">
+  <img style="height: 80%; width: auto;" src="../assets/img/genius.png" alt="genius logo" class="mr-auto ml-5">
+  <form action="http://localhost:4200/results" method="get" class="d-flex justify-content-center col-4 mr-3">
+    <input type="text" class="form-control" name="search" placeholder="Recherche une musique">
+    <input type="submit" class="btn btn-primary ml-2 pb-0">
+  </form>
+</header>
 <router-outlet></router-outlet>
 
 <footer class="mx-auto">
