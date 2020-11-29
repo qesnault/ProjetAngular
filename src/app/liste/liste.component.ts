@@ -17,8 +17,8 @@ export class ListeComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
-      if(params['search']) {
-        this.searchString = params['search'];
+      if(this.route.snapshot.params['search']) {
+        this.searchString = this.route.snapshot.params['search'];;
       } else {
         this.searchString = "vald"
       }

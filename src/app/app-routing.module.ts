@@ -8,7 +8,7 @@ import { HomeComponent } from './home/home.component'
 const routes: Routes = [
   { path: 'song/:songId', component: SongComponent },
   { path: 'artist/:artistId', component:ArtistComponent },
-  { path: 'results', component:ListeComponent },
+  { path: 'results/:search', component:ListeComponent },
   { path: '', component:HomeComponent }
 ];
 
